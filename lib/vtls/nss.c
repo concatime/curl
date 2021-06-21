@@ -41,29 +41,31 @@
 #include "multiif.h"
 #include "curl_printf.h"
 #include "nssg.h"
+
 #include <nspr.h>
-#include <nss.h>
-#include <ssl.h>
-#include <sslerr.h>
-#include <secerr.h>
-#include <secmod.h>
-#include <sslproto.h>
-#include <prtypes.h>
-#include <pk11pub.h>
-#include <prio.h>
-#include <secitem.h>
-#include <secport.h>
-#include <certdb.h>
-#include <base64.h>
-#include <cert.h>
 #include <prerror.h>
-#include <keyhi.h>         /* for SECKEY_DestroyPublicKey() */
+#include <prio.h>
 #include <private/pprio.h> /* for PR_ImportTCPSocket */
+#include <prtypes.h>
+
+#include <nss/base64.h>
+#include <nss/cert.h>
+#include <nss/certdb.h>
+#include <nss/keyhi.h>     /* for SECKEY_DestroyPublicKey() */
+#include <nss/nss.h>
+#include <nss/pk11pub.h>
+#include <nss/secerr.h>
+#include <nss/secitem.h>
+#include <nss/secmod.h>
+#include <nss/secport.h>
+#include <nss/ssl.h>
+#include <nss/sslerr.h>
+#include <nss/sslproto.h>
 
 #define NSSVERNUM ((NSS_VMAJOR<<16)|(NSS_VMINOR<<8)|NSS_VPATCH)
 
 #if NSSVERNUM >= 0x030f00 /* 3.15.0 */
-#include <ocsp.h>
+#include <nss/ocsp.h>
 #endif
 
 #include "strcase.h"

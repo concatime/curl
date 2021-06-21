@@ -79,9 +79,9 @@
 
 #elif defined(USE_NSS)
 
-#  include <nss.h>
-#  include <pk11pub.h>
-#  include <hasht.h>
+#  include <nss/hasht.h>
+#  include <nss/nss.h>
+#  include <nss/pk11pub.h>
 
 #elif defined(USE_MBEDTLS)
 
